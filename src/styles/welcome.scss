@@ -1,0 +1,67 @@
+@font-face {
+  font-family: "Georgia";
+  src: url("https://b2ccdn.coral.ru/content/georgia.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+div[class*="QSBlockMobile_qsBlockMobileContainer"],
+#quick-search-tab-area,
+#breadcrumb-widget {
+  display: none;
+}
+
+.coral {
+  padding-block: 20px;
+}
+
+.welcome__brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 0 20px;
+}
+
+.welcome__hero {
+  position: relative;
+  min-height: 445px;
+
+  &::after {
+    content: "";
+    width: 100px;
+    height: 100px;
+    display: block;
+    position: absolute;
+    top: -20px;
+    left: 20%;
+    background: url("/ball.webp") no-repeat center / cover;
+  }
+}
+
+.welcome__image {
+  border-radius: 16px;
+  display: block;
+}
+
+.welcome__overlay {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: 40px 16px;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+}
+
+.welcome__title {
+  margin: 0;
+  color: #fff;
+  font-family: "Georgia", serif;
+  font-size: 60px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.2;
+  margin: auto 0 0;
+}
