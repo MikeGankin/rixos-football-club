@@ -1,0 +1,26 @@
+.faq {
+  &__title {
+    margin-bottom: 28px;
+  }
+
+  &__list {
+    display: grid;
+    gap: 12px;
+  }
+
+  &__item {
+    padding: 18px 0;
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  &__question {
+    color: #0092D0;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  &__answer {
+    margin-top: 12px;
+  }
+}

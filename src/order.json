@@ -2,6 +2,14 @@
   "assetsPrefix": "landing-pages/<your-project>",
   "blocks": [
     "welcome",
-    "text"
+    "text",
+    "what",
+    "trenings",
+    "hotels",
+    "stars",
+    "coaches",
+    "cubok",
+    "faq",
+    "request"
   ]
 }

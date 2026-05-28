@@ -24,9 +24,18 @@ function mount(container) {
   }
 }
 
+function getContainer() {
+  const existing = document.getElementById(CONTAINER_ID);
+  if (existing) return existing;
+
+  const container = document.createElement("div");
+  container.id = CONTAINER_ID;
+  document.body.append(container);
+  return container;
+}
+
 (() => {
-  const container = document.getElementById(CONTAINER_ID);
-  if (!container) return;
+  const container = getContainer();
   mount(container);
   document.documentElement.style.setProperty("--cdn-prefix", CDN_BASE);
   setupLocalCdnAssetRewrite({

@@ -1,0 +1,72 @@
+.what {
+  &__poster {
+    display: flex;
+    justify-content: start;
+    margin-top: 40px;
+    margin-left: auto;
+    padding: 16px;
+    position: relative;
+    background: url("/poster.jpg") no-repeat center/ cover;
+    min-height: 175px;
+    border-radius: 15px;
+    width: 90%;
+
+    &:before {
+      content: "От 5 до 15 лет";
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 131px;
+      height: 30px;
+      border-radius: 6px;
+      opacity: 0.5;
+      background: #435D7E;
+      font-size: 12px;
+      position: absolute;
+      top: -17px;
+      left: -10%;
+      color: #ffffff;
+      backdrop-filter: blur(10px);
+    }
+
+    &-title {
+      font-size: 18px;
+      color: #ffffff;
+    }
+
+    &-static,
+    &-typed {
+      display: block;
+    }
+
+    &-typed {
+      min-height: 44px;
+      color: #0092D0;
+
+      &::after {
+        content: "";
+        display: inline-block;
+        width: 1px;
+        height: 1em;
+        margin-left: 3px;
+        background: currentColor;
+        vertical-align: -0.1em;
+      }
+    }
+
+  }
+
+  &__subtitle {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    &-icon {
+      width: 78px;
+    }
+  }
+
+  &__note {
+    margin-top: 40px;
+    display: block;
+    color: #0092D0;
+  }
+}

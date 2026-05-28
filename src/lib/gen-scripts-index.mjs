@@ -78,6 +78,8 @@ if (WATCH) {
   chokidar
     .watch([ORDER_FILE, SCRIPTS_DIR], {
       ignoreInitial: true,
+      usePolling: true,
+      interval: 120,
       awaitWriteFinish: {stabilityThreshold: 120, pollInterval: 30},
     })
     .on("add", schedule)

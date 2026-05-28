@@ -1,0 +1,45 @@
+.cubok {
+  padding-bottom: 44px;
+
+  &__title {
+    margin-bottom: 34px;
+  }
+
+  &__text {
+    max-width: 455px;
+  }
+
+  &__media {
+    min-height: 292px;
+    margin-top: 76px;
+    border-radius: 12px;
+    background: #f3f5ff;
+  }
+
+  &__schedule {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 54px 48px;
+    margin: 56px 0 0;
+    padding-bottom: 42px;
+    border-bottom: 3px solid #0092D0;
+  }
+
+  &__item {
+    display: grid;
+    gap: 10px;
+    margin: 0;
+  }
+
+  &__hotel {
+    color: #0092D0;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  &__date {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+  }
+}
