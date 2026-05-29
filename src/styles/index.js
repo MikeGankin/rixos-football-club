@@ -3,8 +3,4 @@ import './text.scss';
 import './what.scss';
 import './trenings.scss';
 import './hotels.scss';
-import './stars.scss';
-import './coaches.scss';
 import './cubok.scss';
-import './faq.scss';
-import './request.scss';

@@ -1,3 +1,5 @@
+@use "./_mixins.scss" as *;
+
 .hotels {
   overflow: hidden;
 
@@ -8,30 +10,37 @@
 
   &__tabs {
     display: flex;
-    width: max-content;
-    margin-bottom: 70px;
+    width: 100%;
+    margin-bottom: 32px;
     overflow-x: auto;
-    max-width: 100%;
-    scroll-snap-type: x mandatory;
-    scroll-padding-left: 0;
+    border: 1px solid #1b9ad7;
+    border-radius: 14px;
+    background: #ffffff;
   }
 
   &__tab {
-    scroll-snap-align: start;
-    flex: 0 0 auto;
-    min-width: 150px;
-    padding: 18px 24px;
-    border: 1px solid #0092D0;
+    flex: 1 1 0;
+    min-width: max-content;
+    min-height: 52px;
+    padding: 14px 28px;
+    border: 0;
+    border-right: 0;
     background: #ffffff;
-    color: #2a2a2a;
+    color: #2d2d2d;
+    font-size: 14px;
     font-weight: 700;
+    line-height: 1.1;
     text-transform: uppercase;
+    white-space: nowrap;
+    box-shadow: inset -1px 0 0 #1b9ad7;
+
+    &:last-child {
+      box-shadow: none;
+    }
 
     &--active {
-      border-color: #0092D0;
-      background: #0092D0;
+      background: #1497d4;
       color: #ffffff;
-      border-radius: 8px 0 0 8px;
     }
   }
 
@@ -44,7 +53,14 @@
     position: relative;
     min-height: 215px;
     border-radius: 10px;
-    background: #d9d9d9;
+    background-color: #d9d9d9;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &--empty {
+      background-image: none !important;
+    }
   }
 
   &__date {
@@ -114,5 +130,114 @@
     border-radius: 8px;
     background: #0092D0;
     color: #ffffff;
+  }
+
+  @include up(lg) {
+    &__tabs {
+      margin-bottom: 38px;
+      border-radius: 12px;
+    }
+
+    &__tab {
+      min-height: 58px;
+      padding: 16px 26px;
+      font-size: 15px;
+      justify-content: center;
+    }
+
+    &__card {
+      grid-template-columns: 458px minmax(0, 1fr);
+      grid-template-areas:
+        "media date"
+        "media title"
+        "media subtitle"
+        "media description"
+        "media button"
+        "media scheduleTitle"
+        "media schedule";
+      align-items: start;
+      column-gap: 50px;
+      row-gap: 12px;
+    }
+
+    &__media {
+      grid-area: media;
+      min-height: 590px;
+      border-radius: 18px;
+      background-position: center;
+    }
+
+    &__date {
+      grid-area: date;
+      margin: 2px 0 0;
+      font-size: 14px;
+      line-height: 1.2;
+    }
+
+    &__card-title {
+      grid-area: title;
+      margin: -2px 0 0;
+      font-size: 38px;
+      line-height: 0.98;
+      letter-spacing: -0.02em;
+    }
+
+    &__subtitle {
+      grid-area: subtitle;
+      font-size: 24px;
+      line-height: 1.16;
+      margin: -2px 0 6px;
+    }
+
+    &__description {
+      grid-area: description;
+      max-width: 700px;
+      gap: 8px;
+      font-size: 16px;
+      line-height: 1.45;
+      margin-bottom: 12px;
+    }
+
+    &__button {
+      grid-area: button;
+      width: 128px;
+      min-height: 38px;
+      border-radius: 11px;
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    &__schedule-title {
+      grid-area: scheduleTitle;
+      margin: 0 0 6px;
+      font-size: 28px;
+      line-height: 1.15;
+    }
+
+    &__schedule {
+      grid-area: schedule;
+      max-width: 532px;
+    }
+
+    &__schedule-item {
+      padding: 12px 0 11px;
+    }
+
+    &__player,
+    &__period {
+      font-size: 16px;
+      line-height: 1.25;
+    }
+
+    &__player {
+      color: #1497d4;
+    }
+
+    &__period {
+      min-width: 180px;
+      color: #1497d4;
+      text-align: left;
+      font-weight: 400;
+    }
   }
 }

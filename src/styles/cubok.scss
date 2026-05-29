@@ -1,19 +1,42 @@
+@use "./_mixins.scss" as *;
+
 .cubok {
   padding-bottom: 44px;
 
+  &__body {
+    display: grid;
+    gap: 34px;
+  }
+
   &__title {
-    margin-bottom: 34px;
+    margin: 0;
   }
 
   &__text {
     max-width: 455px;
   }
 
+  &__content {
+    display: grid;
+    gap: 20px;
+  }
+
   &__media {
+    position: relative;
     min-height: 292px;
-    margin-top: 76px;
+    margin-top: 16px;
     border-radius: 12px;
+    overflow: hidden;
     background: #f3f5ff;
+  }
+
+  &__image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center bottom;
   }
 
   &__schedule {
@@ -22,7 +45,6 @@
     gap: 54px 48px;
     margin: 56px 0 0;
     padding-bottom: 42px;
-    border-bottom: 3px solid #0092D0;
   }
 
   &__item {
@@ -32,14 +54,80 @@
   }
 
   &__hotel {
-    color: #0092D0;
-    font-size: 20px;
+    color: #0092d0;
+    font-size: 14px;
     font-weight: 700;
   }
 
   &__date {
     margin: 0;
-    font-size: 20px;
+    font-size: 14px;
     font-weight: 700;
+  }
+
+  @include up(lg) {
+    position: relative;
+    padding-left: 458px;
+    min-height: 536px;
+
+    &__body {
+      max-width: 780px;
+      gap: 0;
+    }
+
+    &__title {
+      margin: 2px 0 28px;
+    }
+
+    &__text {
+      max-width: 780px;
+      font-size: 16px;
+      line-height: 1.45;
+    }
+
+    &__content {
+      max-width: 780px;
+      margin-bottom: 56px;
+    }
+
+    &__media {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 332px;
+      margin-top: 0;
+      border-radius: 18px;
+    }
+
+    &__image {
+      object-fit: cover;
+      object-position: center center;
+    }
+
+    &__schedule {
+      width: 100%;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px 42px;
+      max-width: 940px;
+      margin: 0;
+      padding: 0 0 24px;
+      border-bottom: 2px solid #1497d4;
+    }
+
+    &__item {
+      gap: 4px;
+    }
+
+    &__hotel {
+      font-size: 14px;
+      line-height: 1.25;
+    }
+
+    &__date {
+      font-size: 14px;
+      line-height: 1.2;
+      font-weight: 400;
+    }
   }
 }

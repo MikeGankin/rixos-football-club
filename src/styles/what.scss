@@ -1,72 +1,183 @@
+@use "./_mixins.scss" as *;
+
 .what {
-  &__poster {
-    display: flex;
-    justify-content: start;
-    margin-top: 40px;
-    margin-left: auto;
-    padding: 16px;
-    position: relative;
-    background: url("/poster.jpg") no-repeat center/ cover;
-    min-height: 175px;
-    border-radius: 15px;
-    width: 90%;
+	&__poster {
+		display: flex;
+		justify-content: start;
+		margin-top: 40px;
+		margin-left: auto;
+		padding: 16px;
+		position: relative;
+		background: url("/poster.jpg") no-repeat center / cover;
+		min-height: 175px;
+		border-radius: 15px;
+		width: 90%;
+		overflow: visible;
 
-    &:before {
-      content: "От 5 до 15 лет";
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 131px;
-      height: 30px;
-      border-radius: 6px;
-      opacity: 0.5;
-      background: #435D7E;
-      font-size: 12px;
-      position: absolute;
-      top: -17px;
-      left: -10%;
-      color: #ffffff;
-      backdrop-filter: blur(10px);
-    }
+		&:before {
+			content: "От 5 до 15 лет";
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			min-width: 131px;
+			height: 30px;
+			border-radius: 6px;
+			background: rgba(67, 93, 126, 0.5);
+			font-size: 12px;
+			position: absolute;
+			right: 12px;
+			bottom: 12px;
+			color: #ffffff;
+			-webkit-backdrop-filter: blur(10px);
+			backdrop-filter: blur(10px);
+		}
 
-    &-title {
-      font-size: 18px;
-      color: #ffffff;
-    }
+		&-title {
+			position: relative;
+			z-index: 1;
+			font-size: 18px;
+			color: #ffffff;
+		}
 
-    &-static,
-    &-typed {
-      display: block;
-    }
+		&-static,
+		&-typed {
+			display: block;
+		}
 
-    &-typed {
-      min-height: 44px;
-      color: #0092D0;
+		&-typed {
+			min-height: 44px;
+			color: #0092d0;
 
-      &::after {
-        content: "";
-        display: inline-block;
-        width: 1px;
-        height: 1em;
-        margin-left: 3px;
-        background: currentColor;
-        vertical-align: -0.1em;
-      }
-    }
+			&::after {
+				content: "";
+				display: inline-block;
+				width: 1px;
+				height: 1em;
+				margin-left: 3px;
+				background: currentColor;
+				vertical-align: -0.1em;
+			}
+		}
+	}
 
-  }
+	&__subtitle {
+		margin-top: 40px;
+		margin-bottom: 20px;
 
-  &__subtitle {
-    margin-top: 40px;
-    margin-bottom: 20px;
-    &-icon {
-      width: 78px;
-    }
-  }
+		&-icon {
+			width: 78px;
+		}
+	}
 
-  &__note {
-    margin-top: 40px;
-    display: block;
-    color: #0092D0;
-  }
+	&__text {
+		line-height: 1.45;
+	}
+
+	&__note {
+		margin-top: 40px;
+		display: block;
+		color: #0092d0;
+		font-size: 16px;
+	}
+
+	@include up(lg) {
+		&__poster {
+			width: min(100%, 830px);
+			min-height: 300px;
+			margin-top: 34px;
+			margin-right: 180px;
+			padding: 34px 30px;
+			border-radius: 18px;
+
+			&:before {
+				right: 16px;
+				bottom: 16px;
+				min-width: 118px;
+				height: 36px;
+				border-radius: 10px;
+				font-size: 14px;
+			}
+
+			&::after {
+				content: "";
+				position: absolute;
+				top: 14px;
+				right: -84px;
+				width: 190px;
+				height: 66px;
+				border-radius: 14px;
+				background:
+					url("/small-field.png") no-repeat 12px 12px / 56px 42px,
+					linear-gradient(
+						180deg,
+						rgba(255, 255, 255, 0.98),
+						rgba(245, 246, 248, 0.98)
+					);
+				box-shadow: 0 10px 30px rgba(31, 39, 60, 0.12);
+			}
+
+			&-title {
+				max-width: 420px;
+				font-size: 30px;
+				line-height: 0.95;
+
+				&::after {
+					content: "";
+					position: absolute;
+					left: 20px;
+					bottom: -150px;
+					width: 114px;
+					height: 114px;
+					border-radius: 14px;
+					background:
+						url("/cubok.png") no-repeat center 12px / 74px auto,
+						linear-gradient(
+							180deg,
+							rgba(255, 255, 255, 0.98),
+							rgba(245, 246, 248, 0.98)
+						);
+					box-shadow: 0 14px 34px rgba(31, 39, 60, 0.14);
+				}
+			}
+
+			&-typed {
+				min-height: 74px;
+			}
+		}
+
+		&__subtitle {
+			display: grid;
+			grid-template-columns: 104px minmax(0, 1fr);
+			align-items: center;
+			gap: 18px;
+			max-width: 760px;
+			margin-top: 42px;
+			margin-left: 220px;
+			margin-bottom: 18px;
+			font-size: 34px;
+			line-height: 1.18;
+
+			&-icon {
+				width: 104px;
+				border-radius: 999px;
+			}
+		}
+
+		&__text,
+		&__note {
+			max-width: 610px;
+			margin-left: 342px;
+		}
+
+		&__text {
+			font-size: 16px;
+			line-height: 1.45;
+		}
+
+		&__note {
+			margin-top: 12px;
+			font-size: 16px;
+			line-height: 1.35;
+		}
+	}
 }
