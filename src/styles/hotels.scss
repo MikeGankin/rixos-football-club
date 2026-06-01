@@ -3,8 +3,12 @@
 .hotels {
   overflow: hidden;
 
+  @media (min-width: 1024px) {
+    padding-top: 180px;
+  }
+
   &__title {
-    max-width: 330px;
+    max-width: 350px;
     margin-bottom: 32px;
   }
 
@@ -21,6 +25,7 @@
   &__tab {
     flex: 1 1 0;
     min-width: max-content;
+    cursor: pointer;
     min-height: 52px;
     padding: 14px 28px;
     border: 0;
@@ -124,12 +129,17 @@
   }
 
   &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     min-height: 54px;
     border: 0;
-    border-radius: 8px;
+    border-radius: 8px !important;
     background: #0092D0;
-    color: #ffffff;
+    color: #ffffff !important;
+    cursor: pointer;
+    text-decoration: none !important;
   }
 
   @include up(lg) {

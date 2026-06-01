@@ -1,183 +1,239 @@
 @use "./_mixins.scss" as *;
 
 .what {
-	&__poster {
-		display: flex;
-		justify-content: start;
-		margin-top: 40px;
-		margin-left: auto;
-		padding: 16px;
-		position: relative;
-		background: url("/poster.jpg") no-repeat center / cover;
-		min-height: 175px;
-		border-radius: 15px;
-		width: 90%;
-		overflow: visible;
+  &__poster {
+    display: flex;
+    justify-content: start;
+    margin-top: 40px;
+    margin-left: auto;
+    padding: 16px;
+    position: relative;
+    background: url("https://b2ccdn.coral.ru/content/rixos football academy/poster.webp") no-repeat center / cover;
+    min-height: 175px;
+    border-radius: 15px;
+    width: 100%;
+    overflow: visible;
 
-		&:before {
-			content: "От 5 до 15 лет";
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			min-width: 131px;
-			height: 30px;
-			border-radius: 6px;
-			background: rgba(67, 93, 126, 0.5);
-			font-size: 12px;
-			position: absolute;
-			right: 12px;
-			bottom: 12px;
-			color: #ffffff;
-			-webkit-backdrop-filter: blur(10px);
-			backdrop-filter: blur(10px);
-		}
+    &:before {
+      content: "От 5 до 15 лет";
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 131px;
+      height: 30px;
+      border-radius: 6px;
+      background: rgba(67, 93, 126, 0.5);
+      font-size: 12px;
+      position: absolute;
+      right: 12px;
+      bottom: 12px;
+      color: #ffffff;
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+    }
 
-		&-title {
-			position: relative;
-			z-index: 1;
-			font-size: 18px;
-			color: #ffffff;
-		}
+    &-title {
+      position: relative;
+      z-index: 1;
+      font-size: 18px;
+      color: #ffffff;
+    }
 
-		&-static,
-		&-typed {
-			display: block;
-		}
+    &-static,
+    &-typed {
+      display: block;
+    }
 
-		&-typed {
-			min-height: 44px;
-			color: #0092d0;
+    &-typed {
+      min-height: 44px;
+      color: #0092d0;
 
-			&::after {
-				content: "";
-				display: inline-block;
-				width: 1px;
-				height: 1em;
-				margin-left: 3px;
-				background: currentColor;
-				vertical-align: -0.1em;
-			}
-		}
-	}
+      &::after {
+        content: "";
+        display: inline-block;
+        width: 1px;
+        height: 1em;
+        margin-left: 3px;
+        background: currentColor;
+        vertical-align: -0.1em;
+      }
+    }
+  }
 
-	&__subtitle {
-		margin-top: 40px;
-		margin-bottom: 20px;
+  &__experience,
+  &__cup-card {
+    display: none;
+  }
 
-		&-icon {
-			width: 78px;
-		}
-	}
+  &__subtitle {
+    margin-top: 40px;
+    margin-bottom: 20px;
 
-	&__text {
-		line-height: 1.45;
-	}
+    &-icon {
+      width: 78px;
+    }
+  }
 
-	&__note {
-		margin-top: 40px;
-		display: block;
-		color: #0092d0;
-		font-size: 16px;
-	}
+  &__text {
+    line-height: 1.45;
+  }
 
-	@include up(lg) {
-		&__poster {
-			width: min(100%, 830px);
-			min-height: 300px;
-			margin-top: 34px;
-			margin-right: 180px;
-			padding: 34px 30px;
-			border-radius: 18px;
+  &__note {
+    margin-top: 40px;
+    display: block;
+    color: #0092d0;
+    font-size: 16px;
+  }
 
-			&:before {
-				right: 16px;
-				bottom: 16px;
-				min-width: 118px;
-				height: 36px;
-				border-radius: 10px;
-				font-size: 14px;
-			}
+  @include up(lg) {
+    &__poster {
+      width: min(100%, 1024px);
+      min-height: 300px;
+      margin-top: 34px;
+      margin-right: 180px;
+      padding: 34px 30px;
+      border-radius: 18px;
 
-			&::after {
-				content: "";
-				position: absolute;
-				top: 14px;
-				right: -84px;
-				width: 190px;
-				height: 66px;
-				border-radius: 14px;
-				background:
-					url("/small-field.png") no-repeat 12px 12px / 56px 42px,
-					linear-gradient(
-						180deg,
-						rgba(255, 255, 255, 0.98),
-						rgba(245, 246, 248, 0.98)
-					);
-				box-shadow: 0 10px 30px rgba(31, 39, 60, 0.12);
-			}
+      &:before {
+        display: none;
+      }
 
-			&-title {
-				max-width: 420px;
-				font-size: 30px;
-				line-height: 0.95;
+      &-title {
+        max-width: 420px;
+        font-size: 30px;
+        line-height: 0.95;
+      }
 
-				&::after {
-					content: "";
-					position: absolute;
-					left: 20px;
-					bottom: -150px;
-					width: 114px;
-					height: 114px;
-					border-radius: 14px;
-					background:
-						url("/cubok.png") no-repeat center 12px / 74px auto,
-						linear-gradient(
-							180deg,
-							rgba(255, 255, 255, 0.98),
-							rgba(245, 246, 248, 0.98)
-						);
-					box-shadow: 0 14px 34px rgba(31, 39, 60, 0.14);
-				}
-			}
+      &-typed {
+        min-height: 74px;
+      }
+    }
 
-			&-typed {
-				min-height: 74px;
-			}
-		}
+    &__experience {
+      position: absolute;
+      top: 18px;
+      right: -108px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      inline-size: fit-content;
+      max-inline-size: calc(100% - 24px);
+      padding: 6px;
+      border-radius: 10px;
+      background: rgb(255 255 255 / 70%);
+      box-shadow: 1px 0 20px 2px rgba(146, 146, 146, 0.3);
+      -webkit-backdrop-filter: blur(16px);
+      backdrop-filter: blur(3px);
+    }
 
-		&__subtitle {
-			display: grid;
-			grid-template-columns: 104px minmax(0, 1fr);
-			align-items: center;
-			gap: 18px;
-			max-width: 760px;
-			margin-top: 42px;
-			margin-left: 220px;
-			margin-bottom: 18px;
-			font-size: 34px;
-			line-height: 1.18;
+    &__experience-image {
+      flex: 0 0 55px;
+      width: 55px;
+      align-self: stretch;
+      height: auto;
+      aspect-ratio: 1;
+      border-radius: 4px;
+      object-fit: cover;
+    }
 
-			&-icon {
-				width: 104px;
-				border-radius: 999px;
-			}
-		}
+    &__experience-content {
+      display: grid;
+      gap: 4px;
+    }
 
-		&__text,
-		&__note {
-			max-width: 610px;
-			margin-left: 342px;
-		}
+    &__experience-title {
+      margin: 0;
+      font-family: "Georgia", serif;
+      font-size: 16px;
+      line-height: 1.1;
+      color: #2f2f2f;
+    }
 
-		&__text {
-			font-size: 16px;
-			line-height: 1.45;
-		}
+    &__experience-text {
+      margin: 0;
+      max-inline-size: 18ch;
+      font-size: 14px;
+      line-height: 1.2;
+      color: #2f2f2f;
+    }
 
-		&__note {
-			margin-top: 12px;
-			font-size: 16px;
-			line-height: 1.35;
-		}
-	}
+    &__cup-card {
+      position: absolute;
+      left: 62px;
+      bottom: -95px;
+      display: block;
+      inline-size: fit-content;
+      min-width: 119px;
+      min-height: 133px;
+      padding: 10px 10px 52px;
+      border-radius: 10px;
+      overflow: hidden;
+      background: url("https://b2ccdn.coral.ru/content/rixos football academy/samll-kubok.png") no-repeat right 10px bottom / 48px auto,
+      rgb(255 255 255 / 70%);
+      box-shadow: 1px 0 20px 2px rgba(146, 146, 146, 0.3);
+      -webkit-backdrop-filter: blur(16px);
+      backdrop-filter: blur(3px);
+    }
+
+    &__cup-card-top {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    &__cup-card-label {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: rgba(79, 79, 79, 0.24);
+      text-transform: uppercase;
+    }
+
+    &__cup-card-title {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      color: #0092d0;
+      font-size: 20px;
+      line-height: 1;
+      font-weight: 700;
+    }
+
+    &__subtitle {
+      display: grid;
+      grid-template-columns: 104px minmax(0, 1fr);
+      align-items: center;
+      gap: 18px;
+      max-width: 760px;
+      margin-top: 192px;
+      margin-left: 220px;
+      margin-bottom: 18px;
+      font-size: 34px;
+      line-height: 1.18;
+
+      &-icon {
+        width: 104px;
+        border-radius: 999px;
+      }
+    }
+
+    &__text,
+    &__note {
+      max-width: 610px;
+      margin-left: 342px;
+    }
+
+    &__text {
+      font-size: 16px;
+      line-height: 1.45;
+    }
+
+    &__note {
+      margin-top: 12px;
+      font-size: 16px;
+      line-height: 1.35;
+    }
+  }
 }

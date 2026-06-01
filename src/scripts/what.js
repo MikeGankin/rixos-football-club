@@ -1,3 +1,5 @@
+import {hostReactAppReady} from "../utils/utils.js";
+
 const PHRASES = [
   "под руководством известных тренеров",
   "с участием звездных футболистов",
@@ -8,7 +10,9 @@ const TYPE_DELAY = 70;
 const ERASE_DELAY = 35;
 const HOLD_DELAY = 1400;
 
-export default function what(root = document) {
+export default async function what(root = document) {
+  await hostReactAppReady()
+
   const target = root.querySelector(".what__poster-typed");
   if (!target) return;
 
